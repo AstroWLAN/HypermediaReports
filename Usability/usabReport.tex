@@ -1,0 +1,47 @@
+\documentclass[11pt, a4paper]{article}
+
+% -- PACKAGES -- 
+% Document structure and impagination
+\usepackage[margin=3cm]{geometry}
+% Allows colors usage
+\usepackage[dvipsnames]{xcolor} 
+% Images management
+\usepackage{graphicx}
+% Tables 
+\usepackage{tabularx}
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+% Date format - Italian
+\usepackage[italian]{datetime2}
+% Vertical space controling
+\usepackage{setspace}
+% Allows math formulas usage
+\usepackage{mathtools}
+% Code Snippets
+\usepackage{listings}
+% Captions
+\usepackage{subcaption}
+
+% -- SETTINGS --
+% Captions Settings
+\DeclareCaptionFormat{custom} {
+    \textbf{#1}\\
+	\vspace*{4pt}
+	\small{#3}
+}
+\captionsetup{format=custom}
+
+% -- DOCUMENT --
+% Main title of the document
+\title{Report}
+
+% Document structure
+\begin{document}
+\maketitle
+% Table of contents
+\newpage
+\tableofcontents
+
+% Chapters
+\include{Chapters/abstract}
+\end{document}
