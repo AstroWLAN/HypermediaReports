@@ -9,6 +9,8 @@
 \usepackage{graphicx}
 % Tables 
 \usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{makecell}
 % Hyperlinks
 \usepackage[hidelinks]{hyperref}
 % Date format - Italian
@@ -32,21 +34,30 @@
 }
 \captionsetup{format=custom}
 
-% -- DOCUMENT --
-% Main title of the document
-\title{Report}
+% Tables formatting
+\setlength{\tabcolsep}{0.5em}
 
+%% -- COLORS --
+% Colors used in the document 
+\definecolor{unicefBlue}{HTML}{1CABE2}
+\definecolor{unicefRed}{HTML}{D72929}
+\definecolor{unicefOrange}{HTML}{EA8A2D}
+\definecolor{unicefGreen}{HTML}{1A8724}
+\definecolor{unicefGray}{HTML}{8B8B8B}
+
+% -- DOCUMENT --
 % Document structure
 \begin{document}
+\pagenumbering{gobble}
+% Cover
 \includepdf{Resources/documentCover}
 
 % Table of contents
-\newpage
 \tableofcontents
 
 % -- CHAPTERS -- 
 % Abstract
-\include{Chapters/abstract}
+\include{Chapters/Shared/abstract}
 % Inspection 
 \include{Chapters/Shared/inspection}
 \include{Chapters/Evaluation/darioEvaluation}
