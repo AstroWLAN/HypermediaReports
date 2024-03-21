@@ -2,7 +2,6 @@
 *
 !*/
 !.gitignore
-!*.pdf
 !*.tex
 !*.md
 !*.png
