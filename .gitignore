@@ -1,8 +1,7 @@
-# WHITELIST only the useful files
+# WHITELIST only useful files
 *
 !*/
 !.gitignore
-!*.pdf
 !*.tex
 !*.md
 !*.png

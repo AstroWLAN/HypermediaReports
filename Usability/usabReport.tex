@@ -3,24 +3,28 @@
 % -- PACKAGES -- 
 % Document structure and impagination
 \usepackage[margin=3cm]{geometry}
+\usepackage{setspace}
+
 % Allows colors usage
 \usepackage[dvipsnames]{xcolor} 
+
 % Images management
 \usepackage{graphicx}
+
 % Tables 
 \usepackage{tabularx}
 \usepackage{multirow}
-\usepackage{makecell}
+\usepackage{colortbl}
+
 % Hyperlinks
 \usepackage[hidelinks]{hyperref}
-% Date format - Italian
-\usepackage[italian]{datetime2}
-% Vertical space controling
-\usepackage{setspace}
+
 % Allows math formulas usage
 \usepackage{mathtools}
+
 % PDFs
 \usepackage{pdfpages}
+
 % Captions
 \usepackage{subcaption}
 \usepackage{booktabs}
@@ -50,8 +54,9 @@
 % Document structure
 \begin{document}
 \pagenumbering{gobble}
-% Cover
-\includepdf{Resources/documentCover}
+
+% Document cover
+\includepdf{Resources/Shared/documentCover}
 
 % Table of contents
 \tableofcontents
@@ -59,12 +64,15 @@
 % -- CHAPTERS -- 
 % Abstract
 \include{Chapters/Shared/abstract}
+
 % Inspection 
 \include{Chapters/Shared/inspection}
 \include{Chapters/Evaluation/darioEvaluation}
 \include{Chapters/Evaluation/yanEvaluation}
 \include{Chapters/Shared/conclusions}
+
 % User Testing
 \include{Chapters/Shared/userTesting}
 \include{Chapters/Shared/results}
+
 \end{document}
