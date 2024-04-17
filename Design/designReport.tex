@@ -1,0 +1,55 @@
+\documentclass[11pt, a4paper]{article}
+
+% -- PACKAGES -- 
+% Document structure and impagination
+\usepackage[margin=3cm]{geometry}
+\usepackage{setspace}
+
+% Allows colors usage
+\usepackage[dvipsnames]{xcolor} 
+
+% Images management
+\usepackage{graphicx}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% PDFs
+\usepackage{pdfpages}
+
+% Captions
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float} 
+
+% -- SETTINGS --
+% Captions Settings
+\DeclareCaptionFormat{custom} {
+    \textbf{#1}\\
+	\vspace*{4pt}
+	\small{#3}
+}
+\captionsetup{format=custom}
+
+% -- DOCUMENT --
+% Document structure
+\begin{document}
+\pagenumbering{gobble}
+
+% Document cover
+\includepdf{Resources/documentCover}
+
+% Table of contents
+\tableofcontents
+
+% -- CHAPTERS -- 
+% Abstract
+\include{Chapters/abstract}
+
+% Inspection 
+\include{Chapters/conceptual}
+\include{Chapters/visual}
+\include{Chapters/interaction}
+\include{Chapters/database}
+
+\end{document}
