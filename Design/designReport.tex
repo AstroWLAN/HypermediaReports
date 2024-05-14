@@ -11,8 +11,16 @@
 % Images management
 \usepackage{graphicx}
 
+% Tables 
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
 % Hyperlinks
 \usepackage[hidelinks]{hyperref}
+
+% Allows math formulas usage
+\usepackage{mathtools}
 
 % PDFs
 \usepackage{pdfpages}
@@ -21,6 +29,9 @@
 \usepackage{subcaption}
 \usepackage{booktabs}
 \usepackage{float} 
+
+% Code
+\usepackage{listings}
 
 % -- SETTINGS --
 % Captions Settings
@@ -31,13 +42,24 @@
 }
 \captionsetup{format=custom}
 
+% Tables formatting
+\setlength{\tabcolsep}{0.5em}
+
+%% -- COLORS --
+% Colors used in the document 
+\definecolor{unicefBlue}{HTML}{1CABE2}
+\definecolor{unicefRed}{HTML}{D72929}
+\definecolor{unicefOrange}{HTML}{EA8A2D}
+\definecolor{unicefGreen}{HTML}{1A8724}
+\definecolor{unicefGray}{HTML}{8B8B8B}
+
 % -- DOCUMENT --
 % Document structure
 \begin{document}
 \pagenumbering{gobble}
 
 % Document cover
-\includepdf{Resources/documentCover}
+\includepdf{Resources/cover.pdf}
 
 % Table of contents
 \tableofcontents
@@ -46,10 +68,5 @@
 % Abstract
 \include{Chapters/abstract}
 
-% Inspection 
-\include{Chapters/conceptual}
-\include{Chapters/visual}
-\include{Chapters/interaction}
-\include{Chapters/database}
 
 \end{document}
