@@ -1,0 +1,72 @@
+\documentclass[11pt, a4paper]{article}
+
+% -- PACKAGES -- 
+% Document structure and impagination
+\usepackage[margin=3cm]{geometry}
+\usepackage{setspace}
+
+% Allows colors usage
+\usepackage[dvipsnames]{xcolor} 
+
+% Images management
+\usepackage{graphicx}
+
+% Tables 
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% Allows math formulas usage
+\usepackage{mathtools}
+
+% PDFs
+\usepackage{pdfpages}
+
+% Captions
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float} 
+
+% Code
+\usepackage{listings}
+
+% -- SETTINGS --
+% Captions Settings
+\DeclareCaptionFormat{custom} {
+    \textbf{#1}\\
+	\vspace*{4pt}
+	\small{#3}
+}
+\captionsetup{format=custom}
+
+% Tables formatting
+\setlength{\tabcolsep}{0.5em}
+
+%% -- COLORS --
+% Colors used in the document 
+\definecolor{anemoneBlue}{HTML}{649DD1}
+\definecolor{anemoneGray}{HTML}{8A88A0}
+
+% -- DOCUMENT --
+% Document structure
+\begin{document}
+\pagenumbering{gobble}
+
+% Document cover
+%\includepdf{Resources/cover.pdf}
+
+% Table of contents
+\tableofcontents
+
+% -- CHAPTERS -- 
+% Abstract
+\include{Chapters/abstract.tex}
+\include{Chapters/hosting_service.tex}
+\include{Chapters/proj_structure.tex}
+\include{Chapters/implemented_components.tex}
+\include{Chapters/used_libs.tex}
+\include{Chapters/SEO_accessibility.tex}
+\end{document}
