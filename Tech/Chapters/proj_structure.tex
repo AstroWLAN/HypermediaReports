@@ -3,6 +3,7 @@
 The server/ directory is used for backend services, while the pages/ directory is for website page endpoints.
 \subsection{Pages}
 \subsection{Server Endpoint}
+The website only shows the information including the employees, service and projects, thus all APIs are GET methods.
 \begin{enumerate}
 	\item GET /api/employee?query=\{id\}: Fetches the full content of a specific exployee identified by its ID. If no ID is provided, it returns all employees that match the query condition.
 	\item GET /api/project?query=\{id\}: Fetches the full content of a specific project identified by its ID. If no ID is provided, it returns all projects that match the query condition.
