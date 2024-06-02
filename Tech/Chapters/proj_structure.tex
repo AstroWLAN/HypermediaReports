@@ -1,5 +1,11 @@
 % Document abstract 
 \pagenumbering{arabic}
 \section{Project Structure}
-Structure of links/pages folder with short description
-o Available server endpoint with short description
+The server/ directory is used for backend services, while the pages/ directory is for website page endpoints.
+\subsection{Pages}
+\subsection{Server Endpoint}
+\begin{enumerate}
+	\item GET /api/employee?query=\{id\}: Fetches the full content of a specific exployee identified by its ID. If no ID is provided, it returns all employees that match the query condition.
+	\item GET /api/project?query=\{id\}: Fetches the full content of a specific project identified by its ID. If no ID is provided, it returns all projects that match the query condition.
+	\item GET /api/service?query=\{id\}: Fetches the full content of a specific service identified by its ID. If no ID is provided, it returns all services that match the query condition.
+\end{enumerate}
