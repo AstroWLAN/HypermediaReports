@@ -1,11 +1,44 @@
 
 \section{Project Structure}
-The server/ directory is used for backend services, while the pages/ directory is for website page endpoints.
-\subsection{Pages}
+The subsection introduces the project structure , pages directory structure and server endpoint.
+\subsection{Overview Structure}
+\begin{enumerate}
+	\item assets/: This folder is for uncompiled assets such as public js and css files.
+	
+	\item components/: This folder is for Vue.js components. Components are reusable elements that you can use across different parts of your application.
+	
+	\item layouts/: This folder contains layout components. Layouts are used to define the structure of your pages. For instance, you might have a default layout and a dashboard layout.
+	
+	\item pages/: This folder contains your application's views and routes. Each file in this directory automatically becomes a route in your app.
+	
+	\item plugins/: This folder is for JavaScript plugins that need to be run before instantiating the root Vue.js application.
+	
+	\item public/: This folder contains static files used to serve publicly that you want to be publicly.
+	
+	\item server/: This folder is used for server-side related code, such as API routes or middleware.
+	
+	\item SQL/: This folder seems to be intended for database-related files, which might include SQL scripts or database schema files.
+\end{enumerate}
+\subsection{Page directory Structure}
+\begin{enumerate}
+	\item people/index.vue: This file defines the /people route, used to display a list of employees.
+	\item people/[id].vue: This dynamic route file handles URLs like /people/:id, where :id is a placeholder for a specific person's identifier. It is used to display the details of a specific employee.
+	\item projects/index.vue: This file defines the /projects route, used to show a list of projects in the website.
+	\item projects/[id].vue: This dynamic route file handles URLs like /projects/:id, where :id is a placeholder for a specific project's identifier. It displays the details of a specific project.
+	\item services/index.vue: This file defines the /services route, which typically shows a list of services offered.
+	\item services/[id].vue: This dynamic route file handles URLs like /services/:id, where :id is a placeholder for a specific service's identifier. It displays details about a specific service.
+	\item assistant.vue: This file defines the /assistant route, function as the chatbot in the website.
+	\item center.vue: This file defines the /center route, which describe the website center explanation.
+	\item request.vue: This file defines the /request route, which is used to handle help request form.
+	\item FAQ.vue: This file defines the /faq route, which is used to display the FAQ page.
+	\item contacts.vue: This file defines the /request route, which is used to display contacts page.
+	
+\end{enumerate}
+
 \subsection{Server Endpoint}
 The website only shows the information including the employees, service and projects, thus all APIs are GET methods.
 \begin{enumerate}
-	\item GET /api/employee?query=\{id\}: Fetches the full content of a specific exployee identified by its ID. If no ID is provided, it returns all employees that match the query condition.
+	\item GET /api/employee?id=\{id\}: Fetches the full content of a specific exployee identified by its ID. If no ID is provided, it returns all employees that match the query condition.
 	Example:
 	\begin{verbatim}
 	{
@@ -14,6 +47,7 @@ The website only shows the information including the employees, service and proj
 			"id": 1,
 			"name": "Sofia Bianchi ",
 			"role": "Director",
+			"pic": "/sofia.jpg",
 			"cv": "Sofia Bianchi, our esteemed Director...",
 			"service": [],
 			"project": []
@@ -21,19 +55,20 @@ The website only shows the information including the employees, service and proj
 		]
 	}
 	\end{verbatim}
-	\item GET /api/project?query=\{id\}: Fetches the full content of a specific project identified by its ID. If no ID is provided, it returns all projects that match the query condition. 
+	\item GET /api/project?id=\{id\}: Fetches the full content of a specific project identified by its ID. If no ID is provided, it returns all projects that match the query condition. 
 	Example:
 	\begin{verbatim}
 	{
 		data:[{	
-			id:1
-			name:"EmpowerHer"
-			description:"The EmpowerHer program i… resilient communities."
-			tag:"Economic Empowerment Program"
+			id:1,
+			name:"EmpowerHer",
+			description:"The EmpowerHer program i… resilient communities.",
+			tag:"Economic Empowerment Program",
+			"pic": "/EmpowerHer.jpg",
 		}]
 	}
 	\end{verbatim}
-	\item GET /api/service?query=\{id\}: Fetches the full content of a specific service identified by its ID. If no ID is provided, it returns all services that match the query condition.
+	\item GET /api/service?id=\{id\}: Fetches the full content of a specific service identified by its ID. If no ID is provided, it returns all services that match the query condition.
 	Example:
 	\begin{verbatim}
 	{
@@ -42,11 +77,26 @@ The website only shows the information including the employees, service and proj
 			"id": 1,
 			"name": "Work",
 			"description": "Our Work Services...",
-			"benefits": "By participating...",
 			"availability": "from 9:00 am to 5:00 pm",
-			"testimonial": "..."
+			"pic": "...",
+			"tag": "..."
 		}
 		]
 	}
+	\end{verbatim}
+		\item GET /api/testimonial?serviceID=\{id\}: Fetches the full testimonial of a service identified by its ID.
+	Example:
+	\begin{verbatim}
+		{
+			"data": [
+			{
+				"id": 1,
+				"serviceID": 1,
+				"comment": "Anemone empowered me to restart my career safely",
+				"name": "Arianna",
+				"age": 24
+			},
+			]
+		}
 	\end{verbatim}
 \end{enumerate}
