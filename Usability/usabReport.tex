@@ -1,0 +1,84 @@
+\documentclass[11pt, a4paper]{article}
+
+% -- PACKAGES -- 
+% Document structure and impagination
+\usepackage[margin=3cm]{geometry}
+\usepackage{setspace}
+
+% Allows colors usage
+\usepackage[dvipsnames]{xcolor} 
+
+% Images management
+\usepackage{graphicx}
+
+% Tables 
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{colortbl}
+
+% Hyperlinks
+\usepackage[hidelinks]{hyperref}
+
+% Allows math formulas usage
+\usepackage{mathtools}
+
+% PDFs
+\usepackage{pdfpages}
+
+% Captions
+\usepackage{subcaption}
+\usepackage{booktabs}
+\usepackage{float} 
+
+% Code
+\usepackage{listings}
+
+% -- SETTINGS --
+% Captions Settings
+\DeclareCaptionFormat{custom} {
+    \textbf{#1}\\
+	\vspace*{4pt}
+	\small{#3}
+}
+\captionsetup{format=custom}
+
+% Tables formatting
+\setlength{\tabcolsep}{0.5em}
+
+%% -- COLORS --
+% Colors used in the document 
+\definecolor{unicefBlue}{HTML}{1CABE2}
+\definecolor{unicefRed}{HTML}{D72929}
+\definecolor{unicefOrange}{HTML}{EA8A2D}
+\definecolor{unicefGreen}{HTML}{1A8724}
+\definecolor{unicefGray}{HTML}{8B8B8B}
+
+% -- DOCUMENT --
+% Document structure
+\begin{document}
+\pagenumbering{gobble}
+
+% Document cover
+\includepdf{Resources/Shared/documentCover}
+
+% Table of contents
+\tableofcontents
+
+% -- CHAPTERS -- 
+% Abstract
+\include{Chapters/Shared/abstract}
+
+% Inspection 
+\include{Chapters/Shared/inspection}
+\include{Chapters/Evaluation/darioEvaluation}
+\include{Chapters/Evaluation/harryEvaluation}
+\include{Chapters/Evaluation/SanazEvaluation}
+\include{Chapters/Evaluation/yanEvaluation}
+\include{Chapters/Shared/sharedInspection}
+
+% User Testing
+\include{Chapters/Shared/userTesting}
+% Results
+\include{Chapters/Shared/results}
+
+\end{document}
